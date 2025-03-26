@@ -9,23 +9,43 @@
 </head>
 <body>
     <h1>User Dashboard</h1>
-    <p>Welcome, <span id="userEmail"></span></p>
+    <p>Welcome, <span id="email"></span></p>
     <button id="logoutBtn">Logout</button>
-
+    <div class="card-container">
+        <div class="card">
+            <h3>Voltage</h3>
+            <p><span id="voltageCard">Loading...</span> V</p>
+        </div>
+        <div class="card">
+            <h3>Current</h3>
+            <p><span id="currentCard">Loading...</span> A</p>
+        </div>
+        <div class="card">
+            <h3>Power</h3>
+            <p><span id="powerCard">Loading...</span> W</p>
+        </div>
+    </div>
+    
     <h2>Your Data:</h2>
     <p>Voltage: <span id="voltage">Loading...</span> V</p>
     <p>Current: <span id="current">Loading...</span> A</p>
     <p>Power: <span id="power">Loading...</span> W</p>
 
-    <h2>Update Data:</h2>
+    <!-- <h2>Update Data:</h2>
     <input type="number" id="voltageInput" placeholder="Voltage (V)">
-    <input type="number" id="currentInput" placeholder="Current (A)">
-    <button id="updateBtn">Update</button>
+    <input type="number" id="currentInput" placeholder="Current (A)"> -->
+    <!-- <button id="updateBtn">Update</button> -->
 
+    
     <script type="module">
-        import { updateUserData, logout, loadUserData } from "./js/dashboard.js"; // Ensure the correct path
+        import { signInWithEmail } from "./js/auth.js";
+        import { updateUserData, logout, loadUserData } from "./js/dashboard.js";
+        
         document.getElementById("logoutBtn").addEventListener("click", logout);
         document.getElementById("updateBtn").addEventListener("click", updateUserData);
+
+        const userEmail = getUserEmail();
+        document.getElementById("email").textContent = userEmail;
     
         loadUserData();
     </script>

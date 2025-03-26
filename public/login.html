@@ -19,7 +19,6 @@
     </script>
 </body>
 </html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,17 +26,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
-
 </head>
 <body>
     <h1>Login</h1>
 
-    <!-- Email & Password Login -->
     <input type="email" id="email" placeholder="Enter your email">
     <input type="password" id="password" placeholder="Enter your password">
     <button id="loginBtn">Login</button>
 
-    
     <!-- Google Sign-In -->
     <button id="googleSignInBtn">Sign in with Google</button>
 
@@ -59,3 +55,43 @@
     </script>
 </body>
 </html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+
+</head>
+<body>
+    <h1>Login</h1>
+
+    
+    <input type="email" id="email" placeholder="Enter your email">
+    <input type="password" id="password" placeholder="Enter your password">
+    <button id="loginBtn">Login</button>
+
+    
+    
+    <button id="googleSignInBtn">Sign in with Google</button>
+
+    
+    <button id="goToSignupBtn">Create an Account</button>
+
+    <p id="message"></p>
+
+    <script type="module">
+        import { signInWithGoogle, signInWithEmail } from "./js/auth.js";
+
+        document.getElementById("googleSignInBtn").addEventListener("click", signInWithGoogle);
+        document.getElementById("loginBtn").addEventListener("click", signInWithEmail);
+
+        // Redirect to sign-up page on button click
+        document.getElementById("goToSignupBtn").addEventListener("click", () => {
+            window.location.href = "signup.html";
+        });
+    </script>
+</body>
+</html> -->

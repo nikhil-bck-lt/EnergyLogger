@@ -32,8 +32,10 @@ export function signInWithEmail() {
 
     signInWithEmailAndPassword(auth, email, password)
         .then(userCredential => {
+            const user = userCredential.user;
             alert("Login Successful!");
-            localStorage.setItem("userUID", userCredential.user.uid);
+            localStorage.setItem("userUID", user.uid);
+            localStorage.setItem("email", user.email); // Store user email
             window.location.href = "dashboard.html";
         })
         .catch(error => alert(error.message));

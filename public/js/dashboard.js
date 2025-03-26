@@ -58,8 +58,6 @@ export function logout() {
     signOut(auth)
         .then(() => {
             console.log("User successfully logged out"); // Debugging log
-            localStorage.removeItem("userUID");
-            console.log(userUID) // Clear stored data
             window.location.href = "login.html"; // Redirect to login page
         })
         .catch(error => {
@@ -67,3 +65,5 @@ export function logout() {
             alert("❌ Logout Failed: " + error.message);
         });
 }
+
+
