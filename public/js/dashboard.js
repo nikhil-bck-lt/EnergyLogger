@@ -1,12 +1,15 @@
 import { auth, database } from "./firebase-config.js";
-import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+import { onAuthStateChanged, getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 import { ref, get, update, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
+if (!auth) {
+    console.error("Firebase Auth not initialized!");
+}
 // Load User Data on Dashboard
 export function loadUserData() {
     onAuthStateChanged(auth, user => {
         if (!user) {
-            window.location.href = "index.html";
+            window.location.href = "login.html";
             return;
         }
         const userUID = localStorage.getItem("userUID");
@@ -50,5 +53,17 @@ export function updateUserData() {
 
 // Logout User
 export function logout() {
-    signOut(auth).then(() => window.location.href = "index.html");
+    console.log("Logout function triggered"); // Debugging log
+
+    signOut(auth)
+        .then(() => {
+            console.log("User successfully logged out"); // Debugging log
+            localStorage.removeItem("userUID");
+            console.log(userUID) // Clear stored data
+            window.location.href = "login.html"; // Redirect to login page
+        })
+        .catch(error => {
+            console.error("Logout Error:", error);
+            alert("❌ Logout Failed: " + error.message);
+        });
 }

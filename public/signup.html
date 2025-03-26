@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/signup.css">
+
+</head>
+<body>
+    <h1>Create an Account</h1>
+
+    <!-- Sign Up Form -->
+    <input type="email" id="signupEmail" placeholder="Enter your email">
+    <input type="password" id="signupPassword" placeholder="Enter your password">
+    <button id="signupBtn">Sign Up</button>
+
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+
+    <p id="signupMessage"></p>
+
+    <script type="module">
+        import { signUpWithEmail } from "./js/auth.js";
+
+        document.getElementById("signupBtn").addEventListener("click", signUpWithEmail);
+    </script>
+</body>
+</html>

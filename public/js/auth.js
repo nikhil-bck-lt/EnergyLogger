@@ -41,18 +41,18 @@ export function signInWithEmail() {
 
 // Email & Password Sign-Up
 export function signUpWithEmail() {
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    const email = document.getElementById("signupEmail").value;  // Fixed ID
+    const password = document.getElementById("signupPassword").value;  // Fixed ID
 
     createUserWithEmailAndPassword(auth, email, password)
         .then(userCredential => {
             const user = userCredential.user;
             set(ref(database, "users/" + user.uid), { voltage: 0, current: 0 });
-            alert("Account Created Successfully!");
+            alert("✅ Account Created Successfully!");
+            window.location.href = "dashboard.html";  // Redirect to dashboard after sign-up
         })
-        .catch(error => alert(error.message));
+        .catch(error => alert("❌ Error: " + error.message));
 }
-
 // Password Reset
 export function resetPassword() {
     const email = document.getElementById("email").value;
