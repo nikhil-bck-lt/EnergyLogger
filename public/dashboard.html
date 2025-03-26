@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    <p>Welcome, <span id="userEmail"></span></p>
+    <button id="logoutBtn">Logout</button>
+
+    <h2>Your Data:</h2>
+    <p>Voltage: <span id="voltage">Loading...</span> V</p>
+    <p>Current: <span id="current">Loading...</span> A</p>
+    <p>Power: <span id="power">Loading...</span> W</p>
+
+    <h2>Update Data:</h2>
+    <input type="number" id="voltageInput" placeholder="Voltage (V)">
+    <input type="number" id="currentInput" placeholder="Current (A)">
+    <button id="updateBtn">Update</button>
+
+    <script type="module">
+        import { updateUserData, logout, loadUserData } from "./dashboard.js";
+
+        document.getElementById("logoutBtn").addEventListener("click", logout);
+        document.getElementById("updateBtn").addEventListener("click", updateUserData);
+
+        loadUserData();
+    </script>
+</body>
+</html>
