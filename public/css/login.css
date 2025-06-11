@@ -1,0 +1,100 @@
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: linear-gradient(to right, #141E30, #243B55);
+}
+
+/* Title */
+.title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: white;
+    font-size: 2.2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    
+}
+
+/* Main Login Container */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+/* Input Fields */
+input {
+    width: 95%;
+    padding: 12px;
+    margin: 10px -15px;
+    position: center;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: rgba(201, 200, 200, 0.974);
+}
+
+/* Buttons */
+button {
+    background: #00ADB5;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
+    
+}
+
+button:hover {
+    background: #007B7F;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Secondary Buttons Container */
+.container2 {
+    display: inline-flex;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Links */
+/* a {
+    text-decoration: none;
+    color: #00ADB5;
+    font-size: 0.9rem;
+    display: flex;
+    margin-top: 10px;
+} */

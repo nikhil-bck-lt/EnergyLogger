@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
 </head>
 <body>
+  <div class="container">
     <h1>User Dashboard</h1>
-    <p>Welcome, <span id="userEmail"></span></p>
+    <p>Welcome, <span id="userEmail">Loading...</span></p>
     <button id="logoutBtn">Logout</button>
 
-    <h2>Your Data:</h2>
-    <p>Voltage: <span id="voltage">Loading...</span> V</p>
-    <p>Current: <span id="current">Loading...</span> A</p>
-    <p>Power: <span id="power">Loading...</span> W</p>
+    <div class="card-container">
+      <div class="card">
+        <h3>Voltage</h3>
+        <p><span id="voltage">0</span> V</p>
+      </div>
+      <div class="card">
+        <h3>Current</h3>
+        <p><span id="current">0</span> A</p>
+      </div>
+      <div class="card">
+        <h3>Power</h3>
+        <p><span id="power">0</span> W</p>
+      </div>
+    </div>
+  </div>
+  <div style="width: 90%; max-width: 700px; margin: auto;">
+    <canvas id="lineChart"></canvas>
+  </div>
 
-    <h2>Update Data:</h2>
-    <input type="number" id="voltageInput" placeholder="Voltage (V)">
-    <input type="number" id="currentInput" placeholder="Current (A)">
-    <button id="updateBtn">Update</button>
+  <script type="module">
+    import { logout, loadUserData } from "./js/dashboard.js";
+    
 
-    <script type="module">
-        import { updateUserData, logout, loadUserData } from "./dashboard.js";
-
-        document.getElementById("logoutBtn").addEventListener("click", logout);
-        document.getElementById("updateBtn").addEventListener("click", updateUserData);
-
-        loadUserData();
-    </script>
+    document.getElementById("logoutBtn").addEventListener("click", logout);
+    loadUserData(); // Load real-time data from Firebase
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

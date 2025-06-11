@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Energy Logger Home Page</h1>
+    </div>
+
+    <div class="container" id="container">
+        <h2 id="title2">Login</h2>
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="password" id="password" placeholder="Enter your password">
+        <button id="loginBtn">Login</button>
+
+        <div class="container2">
+            <button id="googleSignInBtn">Sign in with Google</button>
+            <button id="goToSignupBtn">Create an Account</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script type="module">
+        import { signInWithGoogle, signInWithEmail } from "./js/auth.js";
+
+        document.getElementById("googleSignInBtn").addEventListener("click", signInWithGoogle);
+        document.getElementById("loginBtn").addEventListener("click", signInWithEmail);
+
+        // Redirect to sign-up page on button click
+        document.getElementById("goToSignupBtn").addEventListener("click", () => {
+            window.location.href = "signup.html";
+        });
+    </script>
+</body>
+</html>

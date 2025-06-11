@@ -1,0 +1,22 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'No build step needed'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhil-bck-lt/Code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nikhil-bck-lt/Code/issues"
+  },
+  "homepage": "https://github.com/nikhil-bck-lt/Code#readme"
+}
